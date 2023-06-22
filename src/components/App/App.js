@@ -1,19 +1,21 @@
 import React from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'; // Navigate, useNavigate
 
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
+import './App.css';
 
-import Login from './Login';
-import Register from './Register';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
 
-import Profile from './Profile';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 
-import Movies from './Movies';
-import SavedMovies from './SavedMovies';
+import Profile from '../Profile/Profile';
 
-import NotFound from './NotFound';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
+
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
 function App() {
 
@@ -31,7 +33,7 @@ function App() {
               <Register />
             </> 
           }/>
-          <Route path="/" element={
+          <Route exact path="/" element={
             <>
               <Header />
               <Main />
@@ -61,7 +63,7 @@ function App() {
           }/>
           <Route path="*" element={
             <>
-              <NotFound />
+              <NotFoundPage />
             </>
           }/>
         </Routes>  

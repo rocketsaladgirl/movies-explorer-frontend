@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page {
+  max-width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.page__container {  
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*Расширение от 1024px до 1280px*/  
+@media screen and (max-width: 1024px) {
+  .page__container {
+      max-width: 1024px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/*Расширение от 768px до 1024px*/
+@media screen and (max-width: 768px) {
+  .page__container {
+      max-width: 768px;
+  }
+}
+/*Расширение от 320px до 768px*/ 
+@media screen and (max-width: 320px) {
+  .page__container {
+      max-width: 320px;
   }
 }
