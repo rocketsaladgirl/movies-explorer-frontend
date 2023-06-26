@@ -44,7 +44,6 @@ function App() {
             <>
               <Header />
               <Profile />
-              <Footer />
             </>
           }/>
           <Route path="/movies" element={
