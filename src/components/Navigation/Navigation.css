@@ -26,7 +26,7 @@
     /*Основной блок с меню*/
     .navigation__container {
         margin: 0;
-        padding: 159px 90px 90px 90px; /*попробовать поменять на margin*/
+        padding: 159px 90px 90px 90px;
         width: 520px;
         min-height: 100vh;
         position: relative;
@@ -81,7 +81,7 @@
     }
 
     .navigation__link:hover {
-        border-bottom: 4px solid #000;
+        border-bottom: 2px solid #000;
     }
     
     /*Кнопка перехода в профайл*/
@@ -106,7 +106,7 @@
 
     .navigation__container { 
         margin: 0; 
-        padding: 144px 10px 46px 10px; /*попробовать поменять на margin*/
+        padding: 144px 10px 46px 10px;
         width: 100%;
     }
   

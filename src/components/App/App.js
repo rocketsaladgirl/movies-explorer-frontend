@@ -23,6 +23,13 @@ function App() {
     <div className="page">
       <div className="page__container">
         <Routes>
+          <Route exact path="/" element={
+            <>
+              <Header />
+              <Main />
+              <Footer />
+            </>
+          }/>
           <Route path="/signin" element={
             <>
               <Login />
@@ -32,13 +39,6 @@ function App() {
             <>
               <Register />
             </> 
-          }/>
-          <Route exact path="/" element={
-            <>
-              <Header />
-              <Main />
-              <Footer />
-            </>
           }/>
           <Route path="/profile" element={
             <>
