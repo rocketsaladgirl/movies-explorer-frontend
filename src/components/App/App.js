@@ -40,12 +40,6 @@ function App() {
               <Register />
             </> 
           }/>
-          <Route path="/profile" element={
-            <>
-              <Header />
-              <Profile />
-            </>
-          }/>
           <Route path="/movies" element={
             <>
               <Header />
@@ -58,6 +52,12 @@ function App() {
               <Header />
               <SavedMovies />
               <Footer />
+            </>
+          }/>
+          <Route path="/profile" element={
+            <>
+              <Header />
+              <Profile />
             </>
           }/>
           <Route path="*" element={
