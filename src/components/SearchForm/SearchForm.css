@@ -1,0 +1,118 @@
+/*Основной блок*/
+.search {
+    max-width: 100%;	
+    padding: 80px 70px 94px 70px;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+/*Блок с содержимым*/
+.search__container {
+    padding-bottom: 83px;	
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.2); /*еще opacity 0.2*/
+    box-sizing: border-box;
+}
+ 
+/*Форма с поиском фильмов*/
+.search__form {
+    width: 933px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1.3px solid rgba(170, 170, 170, 0.2); /*еще opacity 0.2*/
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+  
+/*Поле input*/  
+.search__input {
+    width: calc(100% - 102px);
+    padding: 15px 0px 15px 22px;
+    color: #A0A0A0;
+    text-align: left;
+    outline: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    border: none;
+    border-radius: 50px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/*Кнопка поиска*/
+.search__button {
+    width: 80px;
+    height: 34px;
+    margin-right: 7px;	
+    background-image: url('../../images/logo/find.svg');
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+}
+  
+.search__button:hover {
+    opacity: 0.6;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .search {
+      padding: 60px 30px 124px 30px;
+    }
+  
+    .search__form {
+      width: 709px;
+    }
+  
+    .search__input {
+      padding-left: 18px;
+      width: calc(100% - 98px);
+    }
+}
+  
+@media screen and (max-width: 768px){
+    .search__container {
+      padding-bottom: 56px;
+      flex-direction: column;
+    }
+  
+}
+  
+@media screen and (max-width: 767px) {
+    .search__form {
+      max-width: 600px;
+      width: 90%;
+    } 
+}
+  
+@media screen and (max-width: 425px) {
+    .search {
+      padding: 60px 10px 118px 10px;
+    }
+  
+    .search__container {
+        padding-bottom: 43px;
+    }
+  
+    .search__form {
+      width: 301px;
+    }
+  
+    .search__input {
+      width: calc(100% - 96px);
+      padding-left: 16px;
+      text-align: left;
+      font-size: 11px;
+      line-height: 18px;
+    }
+}

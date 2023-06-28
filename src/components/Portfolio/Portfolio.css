@@ -110,14 +110,3 @@
         line-height: 28px;
     }
 }
-
-/*  @media screen and (max-width: 420px) {
-   .portfolio__project_link {
-     font-size: 14px;
-     line-height: 1.4;
-   }
-
-   .portfolio__project_link::after {
-     width: 16px;
-     height: 11px;
-   }*/
