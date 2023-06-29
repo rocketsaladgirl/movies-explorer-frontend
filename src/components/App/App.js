@@ -17,7 +17,21 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
+import moviesBase from '../../utils/moviesBase';
+
 function App() {
+  const [moviesList, setMoviesList] = React.useState([]);
+  const [addedMoviesList, setAddedMoviesList] = React.useState([]);
+
+  React.useEffect(() => {
+    setMoviesList(moviesBase);
+  }, []);
+
+  React.useEffect(() => {
+    setAddedMoviesList(moviesBase.filter((movie) => {
+      return movie.saved
+    }))
+  }, []);
 
   return (
     <div className="page">
@@ -43,14 +57,14 @@ function App() {
           <Route path="/movies" element={
             <>
               <Header />
-              <Movies />
+              <Movies moviesList={moviesList}/>
               <Footer />
             </>
           }/>
           <Route path="/saved-movies" element={
             <>
               <Header />
-              <SavedMovies />
+              <SavedMovies moviesList={addedMoviesList}/>
               <Footer />
             </>
           }/>
