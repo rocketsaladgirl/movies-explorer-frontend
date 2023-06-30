@@ -3,24 +3,36 @@ import { Link } from 'react-router-dom';
 
 import './Navigation.css';
 
-import profile from '../../images/logo/profile.svg';
+function Navigation() {
+    const [showItems, setShowItems] = React.useState(false); //задаем стейт работы меню 
+    
+    function handleToggleMenu () { //задаем функционал работы меню 
+        setShowItems(!showItems);
+    };
 
-function Navigation({handleClose}) {
     return (
-        <div className='navigation'>
-            <div className='navigation__block' onClick={handleClose}></div> 
-            <div className='navigation__container'>
-                <button className='navigation__close-button' onClick={handleClose}></button>
-                <nav className='navigation__menu'>
-                    <Link to='/' className='navigation__link' onClick={handleClose}>Главная</Link>
-                    <Link to='/movies' className='navigation__link' onClick={handleClose}>Фильмы</Link>
-                    <Link to='/saved-movies' className='navigation__link' onClick={handleClose}>Сохранённые фильмы</Link>
-                </nav>
-                <Link to='/profile' className='navigation__profile-button' onClick={handleClose}>
-                    <img src={profile} alt='изображение значка аккаунта'/>
-                </Link>
+        <nav className='navigation'>
+            <button className='navigation__button-menu' type='button' onClick={handleToggleMenu}></button>
+            <div className={`navigation__container ${showItems ? 'navigation__container_visible' : ''}`}>
+                <div className='navigation__sidebar'>
+                    <div className='navigation__list-container'>
+                        <button className='navigation__button-close' type='button' onClick={handleToggleMenu}></button>
+                        <ul className='navigation__list'>
+                            <li className='navigation__list-item navigation__list-item_type_main'>
+                                <Link to='/' className='navigation__link' onClick={handleToggleMenu}>Главная</Link>
+                            </li>
+                            <li className='navigation__list-item'>
+                                <Link to='/movies' className='navigation__link' onClick={handleToggleMenu}>Фильмы</Link>
+                            </li>
+                            <li className='navigation__list-item'>
+                                <Link to='/saved-movies' className='navigation__link' onClick={handleToggleMenu}>Сохранённые фильмы</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <Link to='/profile' className='navigation__link navigation__link_type_profile' onClick={handleToggleMenu}></Link>
+                </div>
             </div>
-        </div>
+        </nav>
     );
 }
 

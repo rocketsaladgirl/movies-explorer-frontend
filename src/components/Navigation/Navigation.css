@@ -1,116 +1,170 @@
-/*На расширениях меньше 1024px блок скрыт*/
+/*Основной блок*/
 .navigation {
+    width: 59.2%;
+}
+ 
+/*Кнопка открытия меню*/
+.navigation__button-menu {
+    width: 40px;
+    height: 43px;
+    margin-left: auto;
+    padding: 0;
+    display: none;
+    outline: none;
+    border: none;
+    background: transparent url('../../images/logo/menu.svg') center center / cover no-repeat;
+    transition: opacity .2s linear;
+    cursor: pointer;
+}
+  
+.navigation__button-menu:hover {
+    opacity: .6;
+}
+  
+/*Контейнер с содержимым*/
+.navigation__sidebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+/*Контейнер с кнопкой и ссылками*/
+.navigation__list-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+/*Кнопка закрытия*/
+.navigation__button-close {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    display: none;
+    align-self: flex-end;
+    background: transparent url('../../images/logo/close.svg') center center / 32px no-repeat;
+    transition: opacity .2s linear;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+  
+.navigation__button-close:hover {
+    opacity: .6;
+}
+
+/*Контейнер со ссылками*/
+.navigation__list {
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+  
+/*Обертка ссылки*/
+.navigation__list-item {
+    margin: 0 17px 0 0;
+}
+
+.navigation__list-item_type_main {
     display: none;
 }
 
-/*Вид блока на расширениях меньше 1023px и 576px*/
-@media screen and (max-width: 1023px) {
+/*Ссылка*/
+.navigation__link {
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: none;
+    transition: opacity .2s linear;
+    cursor: pointer;
+}
+  
+.navigation__link:hover {
+    opacity: .6;
+    border-bottom: 2px solid #000;
+}
+  
+.navigation__link_type_profile {
+    width: 100px;
+    height: 32px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../../images/logo/profile.svg);
+    border-radius: 20px;
+}
+  
+@media screen and (max-width: 800px) {
+    .navigation__container {
+        display: none;
+    }
 
-    /*Общий блок*/
-    .navigation {
+    .navigation__container_visible {
         width: 100%;
         display: flex;
         position: fixed;
         top: 0;
-        left: 0;
-        justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.3);
-        z-index: 42;
+        right: 0;
+        background-color: rgba(0, 0, 0, .3);
+        z-index: 2;
     }
 
-    /*Прозрачный блок с левой стороны*/
-    .navigation__block {
-        flex: 1 1 auto;
+    .navigation__button-menu {
+        display: flex;
     }
-
-    /*Основной блок с меню*/
-    .navigation__container {
-        margin: 0;
-        padding: 159px 90px 90px 90px;
+  
+    .navigation__sidebar {
         width: 520px;
         min-height: 100vh;
-        position: relative;
-        display: flex;
+        margin-left: auto;
+        padding: 27px 27px 90px;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
         background-color: #fff;
         box-sizing: border-box;
     }
-
-    /*Кнопка закрытия меню*/
-    .navigation__close-button {
-        width: 22px;
-        height: 22px;
-        padding: 0;
-        position: absolute;
-        top: 22px;
-        right: 22px;
-        background-image: url('../../images/logo/close.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .navigation__close-button {
-        opacity: 0.6;
-    }
-
-    /*Меню навигации*/
-    .navigation__menu {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 22px;
-    }
-
-    /*Ссылки в меню навигации*/
-    .navigation__link {
-        width: max-content;
-        color: #000000;
-        text-decoration: none;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-        text-align: center;
-    }
-
-    .navigation__link:hover {
-        border-bottom: 2px solid #000;
-    }
-    
-    /*Кнопка перехода в профайл*/
-    .navigation__profile-button {
-        width: 100px;
-        height: 30px;
-        background: #ffffff;
-        border: none;
-        box-sizing: border-box;
-        cursor: pointer;
-    }
-    
-    .navigation__profile-button:hover {
-        opacity: 0.6;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .navigation__block {
-        display: none;
-    }
-
-    .navigation__container { 
-        margin: 0; 
-        padding: 144px 10px 46px 10px;
+  
+    .navigation__list-container {
         width: 100%;
     }
   
-    .navigation__menu {
-        gap: 15px;
+    .navigation__button-close {
+        display: flex;
+    }
+  
+    .navigation__list {
+        margin: 110px auto 0;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .navigation__list-item {
+        margin: 0 0 24px;
+    }
+  
+    .navigation__list-item_type_main {
+        display: flex;
+    }
+  
+    .navigation__link {
+        padding: 0 0 4px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+}
+  
+@media screen and (max-width: 450px) {
+    .navigation__sidebar {
+        padding: 18px 18px 46px;
+    }
+
+    .navigation__list {
+        margin: 105px auto 0;
+    }
+  
+    .navigation__list-item {
+        margin: 0 0 20px;
     }
 }
