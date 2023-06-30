@@ -13,7 +13,7 @@ function Navigation() {
     return (
         <nav className='navigation'>
             <button className='navigation__button-menu' type='button' onClick={handleToggleMenu}></button>
-            <div className={`navigation__container ${showItems ? 'navigation__container_visible' : ''}`}>
+            <div className={`navigation__container ${showItems ? 'navigation__container_visible' : ''}`} onClick={handleToggleMenu}>
                 <div className='navigation__sidebar'>
                     <div className='navigation__list-container'>
                         <button className='navigation__button-close' type='button' onClick={handleToggleMenu}></button>

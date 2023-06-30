@@ -82,18 +82,13 @@
   
 .navigation__link:hover {
     opacity: .6;
-    border-bottom: 2px solid #000;
 }
   
 .navigation__link_type_profile {
     width: 100px;
-    height: 32px;
+    height: 30px;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: url(../../images/logo/profile.svg);
-    border-radius: 20px;
 }
   
 @media screen and (max-width: 800px) {
@@ -152,6 +147,14 @@
         font-size: 18px;
         font-weight: 500;
         line-height: 24px;
+    }
+
+    .navigation__link:hover {
+        border-bottom: 2px solid #000;
+    }
+
+    .navigation__link_type_profile:hover {
+        border: none;
     }
 }
   

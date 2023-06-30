@@ -34,47 +34,47 @@ function App() {
   }, []);
 
   return (
-    <div className="page">
-      <div className="page__container">
+    <div className='page'>
+      <div className='page__container'>
         <Routes>
-          <Route exact path="/" element={
+          <Route exact path='/' element={
             <>
-              <Header />
+              <Header loggedIn={false} />
               <Main />
               <Footer />
             </>
           }/>
-          <Route path="/signin" element={
+          <Route path='/signin' element={
             <>
               <Login />
             </>  
           }/>
-          <Route path="/signup" element={
+          <Route path='/signup' element={
             <>
               <Register />
             </> 
           }/>
-          <Route path="/movies" element={
+          <Route exact path='/movies' element={
             <>
-              <Header />
+              <Header loggedIn={true} />
               <Movies moviesList={moviesList}/>
               <Footer />
             </>
           }/>
-          <Route path="/saved-movies" element={
+          <Route exact path='/saved-movies' element={
             <>
-              <Header />
+              <Header loggedIn={true} />
               <SavedMovies moviesList={addedMoviesList}/>
               <Footer />
             </>
           }/>
-          <Route path="/profile" element={
+          <Route exact path='/profile' element={
             <>
-              <Header />
+              <Header loggedIn={true} />
               <Profile />
             </>
           }/>
-          <Route path="*" element={
+          <Route path='*' element={
             <>
               <NotFoundPage />
             </>
