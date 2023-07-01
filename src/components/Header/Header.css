@@ -1,11 +1,16 @@
 /*Основной блок*/
 .header {
   /* padding: 11px 70px; */
-  padding: 18px 70px 38px 70px;
+  /* padding: 18px 70px 38px 70px; */
+  padding: 11px 70px 38px 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #FFFFFF;
+}
+
+.header_type_auth { /*Добавила*/
+  padding-top: 18px;
 }
 
 /*Ссылка на главную страницу*/
@@ -25,12 +30,20 @@
 
 @media screen and (max-width: 800px) {
   .header {
-    padding: 18px 30px;
+    padding: 16px 30px 18px 30px; /*Добавила*/
+  }
+
+  .header_type_auth { /*Добавила*/
+    padding-top: 18px;
   }
 }
 
 @media screen and (max-width: 540px) {
   .header {
-    padding: 18px 14px;
+    padding: 16px 14px 18px 14px; /*Изменила*/
+  }
+
+  .header_type_auth { /*Добавила*/
+    padding-top: 18px;
   }
 }

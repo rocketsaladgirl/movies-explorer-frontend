@@ -81,13 +81,19 @@
 @media screen and (max-width: 768px) {
     .filter {
         margin-left: 0;
-        margin-top: 38px;
+        /* margin-top: 38px; */
+        margin-top: 25px;
         align-self: center;
     }
 }
 
 @media screen and (max-width: 666px) {
     .filter {
-        margin-top: 45px;    
+        /* margin-top: 45px;     */
+        margin-top: 34px;
+    }
+
+    .filter__text {
+        font-size: 11px;
     }
 }

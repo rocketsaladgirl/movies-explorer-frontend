@@ -15,6 +15,7 @@
 
 /*Информация и кнопка сохранения*/
 .movies-card__info {
+    /* margin-bottom: 5px; Добавила */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,7 +36,8 @@
 
 /*Длина фильма*/
 .movies-card__duration {
-    margin: 0 0 14px 14px;
+    /* margin: 0 0 14px 14px; */
+    margin: 0 0 11px 14px;
     color: #A0A0A0;
     font-weight: 400;
     font-size: 11px;
@@ -110,6 +112,7 @@
 @media screen and (max-width: 583px) {
     .movies-card__title {
         max-width: 240px;
+        margin-top: 7px; /*Добавила*/
         /* font-size: 12px;
         line-height: 1.25; */
     }

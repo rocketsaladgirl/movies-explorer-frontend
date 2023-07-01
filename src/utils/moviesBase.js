@@ -26,6 +26,7 @@ const moviesBase = [
     'title': '33 слова о дизайне',
     'duration': '1ч 47м',
     'poster': movie_poster_3,
+    'saved': true,
   },
 
   {
