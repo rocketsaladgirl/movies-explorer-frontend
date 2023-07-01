@@ -1,6 +1,7 @@
 /*Основной блок*/
 .header {
-  padding: 11px 70px;
+  /* padding: 11px 70px; */
+  padding: 18px 70px 38px 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;

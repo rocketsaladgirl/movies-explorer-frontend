@@ -164,17 +164,20 @@
     }
 
     .about__description {
+        margin-top: 18px;/*Добавила*/
         font-size: 11px;
         line-height: 16px;
     }
 
     .about__paragraph {
+        min-height: 115px; /*Добавила*/
         font-size: 11px;
         line-height: 16px;
     }
 
     .about__link {
-        margin-top: 40px;
+        /* margin-top: 40px; */
+        margin-top: 38px;
         font-size: 14px;
         line-height: 17px;
     }

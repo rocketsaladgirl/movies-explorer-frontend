@@ -77,6 +77,8 @@
 
 /*Значок*/
 .portfolio__list_icon {
+    width: 29px; /*Добавила*/
+    height: 50px; /*Добавила*/
     margin: 0;
 }
 
@@ -96,17 +98,27 @@
 
 @media screen and (max-width: 576px) {
     .portfolio__container {
-        padding: 0px 14px 70px;
+        /* padding: 0px 14px 70px; */
+        padding: 0px 14px 49px;
         gap: 40px;
+    }
+
+    .portfolio__list_item {
+        padding-bottom: 0px;
+        height: 49px;
     }
 
     .portfolio__title {
         font-size: 14px;
-        line-height: 1.43;
+        line-height: 20px;
     }
 
     .portfolio__list_link {
         font-size: 18px;
         line-height: 28px;
+    }
+
+    .portfolio__list_icon {
+        text-align: right;
     }
 }

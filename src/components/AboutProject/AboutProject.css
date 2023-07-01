@@ -127,6 +127,10 @@
         font-size: 12px;
         line-height: 18px;
     }
+
+    .project__timeline-title_color { /*Добавила*/
+        width: 140px;
+    }
 }
   
 @media screen and (max-width: 576px) {
@@ -143,17 +147,20 @@
 
     .project__info {
         margin-top: 60px;
-        margin-bottom: 60px;
+        /* margin-bottom: 60px; */
+        margin-bottom: 58px;
         display: flex;
         flex-direction: column;
-        gap: 56px 0;
+        /* gap: 56px 0; */
+        gap: 50px 0;
     }
   
     .project__description {
         max-width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 26px 0;
+        /* gap: 26px 0; */
+        gap: 20px 0;
     }
   
     .project__subtitle {
@@ -176,6 +183,10 @@
     .project__timeline-title {
         font-size: 11px;
         line-height: 13px;
+    }
+
+    .project__timeline-title_color {
+        width: 100px;
     }
   
     .project__timeline-description {
