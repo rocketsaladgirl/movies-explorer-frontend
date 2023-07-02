@@ -161,6 +161,7 @@
 @media screen and (max-width: 450px) {
     .navigation__sidebar {
         padding: 18px 18px 46px;
+        justify-content: normal;
     }
 
     .navigation__list {
@@ -169,5 +170,9 @@
   
     .navigation__list-item {
         margin: 0 0 20px;
+    }
+
+    .navigation__link_type_profile {
+        margin-top: 422px;
     }
 }
