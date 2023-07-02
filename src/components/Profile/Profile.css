@@ -1,7 +1,7 @@
 /*Основная страница*/
 .profile {
     max-width: 410px;
-    margin: 74px auto 70px auto;
+    margin: 47px auto 70px auto;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -75,7 +75,8 @@
 
 /*Кнопка "Редактировать"*/
 .profile__button-save {
-    margin-top: 213px;
+    /* margin-top: 213px; */
+    margin-top: 205px;
     color: #000;
     background-color: #ffffff;
     font-style: normal;
@@ -93,7 +94,7 @@
  
 /*Кнопка "Выйти из аккаунта"*/
 .profile__button-logout {
-    margin-top: 16px;
+    margin-top: 15px;
     color: #ff4062;
     background-color: #ffffff;
     font-style: normal;
@@ -123,10 +124,26 @@
       margin-top: 193px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .profile {
+      margin-top: 233px;
+      padding-top: 0;
+    }
+    
+    .profile__button-save {
+      margin-top: 194px;
+    }
+
+    .profile__button-logout {
+      margin-top: 14px;
+    }
+}
   
 @media screen and (max-width: 576px) {
     .profile {
-      padding: 70px 30px 40px 30px;
+      margin-top: 0;
+      padding: 66px 30px 40px 30px;
     }
   
     .profile__title {
@@ -138,7 +155,7 @@
     }
   
     .profile__button-save {
-      margin-top: 362px;
+      margin-top: 364px;
       font-size: 12px;
       line-height: 15px;
     }
