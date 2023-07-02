@@ -1,6 +1,5 @@
 /*Основной блок*/
 .footer {
-    /* margin: 79px 70px 20px 70px; */
     margin: 0px 70px 20px 70px;
     display: flex;
     flex-direction: column;
@@ -57,14 +56,12 @@
   
 @media screen and (max-width: 1023px) {
     .footer {
-        /* margin: 79px 30px 20px 30px; */
         margin: 0px 30px 20px 30px;
     }
 }
   
 @media screen and (max-width: 576px) {
     .footer {
-        /* margin: 79px 10px 10px 10px; */
         margin: 0px 10px 10px 10px;
     }
   
