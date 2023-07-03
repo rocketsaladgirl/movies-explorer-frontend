@@ -47,6 +47,11 @@
     cursor: pointer;
 }
 
+.search__input:focus {
+  background-color: rgba(221, 216, 216, 0.3);
+  color: #000;
+}
+
 /*Кнопка поиска*/
 .search__button {
     width: 80px;

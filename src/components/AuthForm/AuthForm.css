@@ -51,9 +51,10 @@
 
 /*Поле input*/
 .form__input {
+    width: 100%;
     margin: 0;
     padding: 5px 0 10px 0;
-    width: 100%;
+    color: #000;
     outline: none;
     font-style: normal;
     font-weight: 400;

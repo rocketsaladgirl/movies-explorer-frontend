@@ -7,10 +7,10 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 function SavedMovies({moviesList}) {
     return (
-        <section className='saved-movies'>
+        <main className='saved-movies main-container'>
             <SearchForm />
             <MoviesCardList moviesList={moviesList} />
-        </section>
+        </main>
     );
 }
 

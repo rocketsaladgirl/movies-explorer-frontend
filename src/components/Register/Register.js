@@ -14,17 +14,17 @@ function Register() {
             link='/signin'>
             <label className='form__field'>
                 Имя
-                <input className='form__input' type='text' minLength='2' maxLength='40' required />
+                <input className='form__input' type='text' placeholder='Екатерина' minLength='2' maxLength='40' required />
                 <span className='form__error'>Что-то пошло не так...</span>
             </label>    
             <label className='form__field'>
                 Email
-                <input className='form__input' type='email' required />
+                <input className='form__input' type='email' placeholder='pochta@yandex.ru' required />
                 <span className='form__error'>Что-то пошло не так...</span>
             </label>
             <label className='form__field'>
                 Пароль
-                <input className='form__input' type='password' autoComplete='on' required/>
+                <input className='form__input' type='password' placeholder='******' autoComplete='on' required/>
                 <span className='form__error'>Что-то пошло не так...</span>
             </label>
         </AuthForm>

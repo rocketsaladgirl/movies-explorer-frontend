@@ -10,7 +10,7 @@ import './Main.css';
 
 function Main() {
     return (
-        <main className='main'>
+        <main className='main main-container'>
             <Promo />
             <AboutProject />
             <Techs />
