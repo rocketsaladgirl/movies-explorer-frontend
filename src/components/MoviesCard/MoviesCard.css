@@ -1,7 +1,7 @@
 /*Общий блок*/
 .movies-card {
     background-color: #FDFDFD;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: 10.5s;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
@@ -30,7 +30,7 @@
     font-size: 15px;
     line-height: 18.15px;
     text-overflow: ellipsis;
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: nowrap;
 }
 

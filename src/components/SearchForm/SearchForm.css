@@ -48,8 +48,9 @@
 }
 
 .search__input:focus {
-  background-color: rgba(221, 216, 216, 0.3);
-  color: #000;
+    background-color: rgba(166, 170, 170, 0.3);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 /*Кнопка поиска*/

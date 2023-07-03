@@ -9,24 +9,21 @@
 
 /*Блок с фильмами*/
 .movies-list {
-    margin-top: 0; /*Добавила*/
-    margin-bottom: 0; /*Добавила*/
+    margin-top: 0; 
+    margin-bottom: 0;
     padding: 0;
     display: grid;
-    /* grid-row-gap: 30px; */
     grid-row-gap: 27px;
     grid-column-gap: 24px;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    /* row-gap: 30px; */
+    list-style: none;
 }
 
 /*Кнопка*/
 .movies-list__button {
     width: 320px;
     height: 36px;
-    /* margin: 50px auto 80px; */
-    /* margin: 80px auto 46px; */
     margin: 80px auto 0px;
     padding: 0;
     display: flex;
@@ -90,6 +87,10 @@
         max-width: 583px;
         padding-left: 100px;
         padding-right: 100px;
+    }
+
+    .movies-list__button {
+        width: 229px;
     }
 } 
 
