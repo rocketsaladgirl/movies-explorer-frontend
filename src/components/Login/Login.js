@@ -4,7 +4,7 @@ import './Login.css';
 
 import AuthForm from '../AuthForm/AuthForm';
 
-function Login() { 
+function Login() {
   return (
     <AuthForm
         title='Рады видеть!'
