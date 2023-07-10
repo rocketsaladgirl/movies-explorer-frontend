@@ -17,21 +17,21 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
-import moviesBase from '../../utils/moviesBase';
+// import moviesBase from '../../utils/moviesBase';
 
 function App() {
-  const [moviesList, setMoviesList] = React.useState([]);
-  const [addedMoviesList, setAddedMoviesList] = React.useState([]);
+  // const [moviesList, setMoviesList] = React.useState([]);
+  // const [addedMoviesList, setAddedMoviesList] = React.useState([]);
 
-  React.useEffect(() => {
-    setMoviesList(moviesBase);
-  }, []);
+  // React.useEffect(() => {
+  //   setMoviesList(moviesBase);
+  // }, []);
 
-  React.useEffect(() => {
-    setAddedMoviesList(moviesBase.filter((movie) => {
-      return movie.saved
-    }))
-  }, []);
+  // React.useEffect(() => {
+  //   setAddedMoviesList(moviesBase.filter((movie) => {
+  //     return movie.saved
+  //   }))
+  // }, []);
 
   return (
     <div className='page'>
