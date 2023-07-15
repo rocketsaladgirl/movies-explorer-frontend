@@ -18,6 +18,8 @@ https://rocketsaladgirl.nomoredomains.rocks'
 
 Ссылка на пул-реквест: https://github.com/rocketsaladgirl/movies-explorer-frontend/pull/3
 
+Ссылка на макет: https://disk.yandex.ru/d/fGrvcD2pT_S23Q
+
 
 
 
