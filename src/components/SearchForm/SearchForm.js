@@ -6,7 +6,7 @@ import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 
 import { EMPTY_FIELD } from '../../utils/constants';
 
-const SearchForm = ({ searchParams, handleSubmit, setSearchParams, isRequired = true, isEmptyField }) => {
+function SearchForm({ searchParams, handleSubmit, setSearchParams, isRequired = true, isEmptyField }) {
     const [searchValue, setSearchValue] = useState(searchParams.querry);
     const [isShortsFilmChecked, setIsShortsFilmChecked] = useState(searchParams.includeShorts);
 
@@ -50,6 +50,11 @@ const SearchForm = ({ searchParams, handleSubmit, setSearchParams, isRequired = 
                         isChecked={isShortsFilmChecked}
                     />
                 </form>
+                <span className='search__big-error'>
+                    {
+                        isEmptyField ? EMPTY_FIELD : ''
+                    }
+                </span>
             </div>
         </section>
     )

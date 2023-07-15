@@ -1,28 +1,41 @@
-import React from 'react';
-
 import { useLocation } from 'react-router-dom';
 
 import './MoviesCardList.css';
 
 import MoviesCard from '../MoviesCard/MoviesCard';
 
-function MoviesCardList({ moviesList }) {
+function MoviesCardList({ moviesData, isMovieSeached }) {
     const location = useLocation();
 
     return (
-        <>
-            <section className='movies-container'>
-                <ul className='movies-list'>
-                    {
-                        moviesList
-                        .map((card) => <MoviesCard key={card._id} card={card} />)}
-                </ul>
-                {location.pathname === '/movies' && (
-                    <button className='movies-list__button'>Ещё</button>
-                )}
-            </section>  
-        </>
-    );
+        <section className='movies-container'>
+            {
+                moviesData.length > 0
+                    ? <ul className='movies-list'>
+                        {
+                            moviesData.map((movie) => (
+                                <MoviesCard
+                                    key={
+                                        location.pathname === '/movies'
+                                            ? movie.id
+                                            : movie._id
+                                        }
+                                    movieData={movie}
+                                />
+                            ))
+                        }
+                    </ul>
+                    : <span className='movies-list__error'>
+                        {
+                            isMovieSeached
+                                ? 'Данные не найдены'
+                                : ''
+                        }
+                    </span>
+            }
+        </section>
+    )
 }
+
 
 export default MoviesCardList;

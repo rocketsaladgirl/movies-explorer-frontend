@@ -1,34 +1,103 @@
-import React from 'react';
-
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import './MoviesCard.css';
 
-function MoviesCard({card}) {
-    const location = useLocation(); //определяем состояние кнопки
+import { BEATFILM_URL } from '../../utils/constants';
+import { mainApi } from '../../utils/MainApi';
 
-    const [isCardAdd, setIsCardAdd] = React.useState(card.saved); //стейт отвечаюший за состояние карточки
+import { convertDuration } from '../../utils/utils';
+import { useMoviesContext } from '../../context/CurrentMoviesContext';
 
-    const handleAddSave = () => { //функционал определяющий добавление карточки в избранное
-        setIsCardAdd(!isCardAdd);
-    };
+import Popup from '../Popup/Popup';
+import PopupContent from '../PopupContent/PopupContent';
+
+
+function MoviesCard({ movieData }) {
+    const location = useLocation();
+    const { savedMovies, setSavedMovies } = useMoviesContext();
+    const [isMovieSaved, setIsMovieSaved] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [text, setText] = useState('');
+
+    function saveMovieHandler() {
+        const savingMovieData = {
+            ...movieData,
+            image: `${BEATFILM_URL}${movieData.image.url}`,
+            thumbnail: `${BEATFILM_URL}${movieData.image.formats.thumbnail.url}`,
+            movieId: movieData.id,
+        };
+        delete savingMovieData.id;
+        delete savingMovieData.created_at;
+        delete savingMovieData.updated_at;
+    
+        mainApi.addMovie(savingMovieData)
+            .then(movie => {
+                setSavedMovies([...savedMovies, movie]);
+            })
+            .catch(err => {
+                setIsPopupOpen(true);
+                setText(err);
+            })
+    }
+
+    function deleteMovieHandler() {
+        const deleteParam = location.pathname === '/movies'
+          ? movieData.id
+          : movieData.movieId;
+
+        const deleteMovie = savedMovies.find(movie => movie.movieId === deleteParam);
+    
+        mainApi.deleteMovie(deleteMovie._id)
+            .then(deletedMovieData => {
+                setSavedMovies(savedMovies.filter(movie => movie._id !== deletedMovieData._id));
+            })
+            .catch(err => {
+                setIsPopupOpen(true);
+                setText(err);
+            })
+    }
+
+
+    function handlePopupClose() {
+        setIsPopupOpen(false);
+        setText('');
+    }
+
+    useEffect(() => {
+        setIsMovieSaved(savedMovies.some(movie => movie.movieId === movieData.id || movie.movieId === movieData.movieId));
+    }, [savedMovies, movieData])
 
     return (
         <li className='movies-card'>
+            <Popup isOpen={isPopupOpen}> 
+                <PopupContent onClose={handlePopupClose} text={text} />
+            </Popup>
+
             <article className='movies-card__item'>
                 <div className='movies-card__info'>
                     <div className='movies-card__description'>
-                        <h2 className='movies-card__title'>{card.title}</h2>
-                        <span className='movies-card__duration'>{card.duration}</span>
+                        <h2 className='movies-card__title'>{movieData.nameRU}</h2>
+                        <span className='movies-card__duration'>{convertDuration(+movieData.duration)}</span>
                     </div>
                     {location.pathname === '/movies' && (
-                        <button className={`movies-card__button movies-card__button_type_${!isCardAdd ? 'add' : 'added'}`} type='button' onClick={handleAddSave}></button>
+                        <button className={`movies-card__button movies-card__button_type_${isMovieSaved ? 'added' : 'add'}`} type='button' onClick={isMovieSaved ? deleteMovieHandler : saveMovieHandler}></button>
                     )}
                     {location.pathname === '/saved-movies' && (
-                        <button className='movies-card__button movies-card__button_type_delete' type='button'></button>
+                        <button className={`${isMovieSaved ?  'movies-card__button movies-card__button_type_delete' :  ''}`}  type='button' onClick={deleteMovieHandler}></button>
                     )}
                 </div>
-                <img className='movies-card__poster' src={card.poster} alt={card.title} />
+                <a className='movies-card__trailer' href={movieData.trailerLink} target='_blank' rel='noreferrer'> 
+                    <img 
+                        className='movies-card__poster' 
+                        src={
+                            location.pathname === '/movies'
+                                ? `${BEATFILM_URL}/${movieData.image.url}`
+                                : movieData.image
+                            } 
+                            alt={movieData.nameRU}
+                    />
+                </a>
             </article>
         </li>
     );

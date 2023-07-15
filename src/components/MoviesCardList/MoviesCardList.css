@@ -1,9 +1,6 @@
 /*Общий блок*/
 .movies-container {
-    /* width: 100%; */
     max-width: 100%;
-    /* max-width: 1280px; */
-    /* padding: 70px 70px 30px 70px; */
     padding: 64px 70px 30px 70px;
 }
 
@@ -20,30 +17,16 @@
     list-style: none;
 }
 
-/*Кнопка*/
-.movies-list__button {
-    width: 320px;
-    height: 36px;
-    margin: 80px auto 0px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F9F9F9;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 15px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.movies-list__button:hover {
-    opacity: 0.3;
+/*Контейнер под ошибку*/
+.movies-list__error {
+    width: 100%;
+    margin: 0;
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
 }
 
 @media screen and (max-width: 1030px) {
@@ -66,7 +49,7 @@
     }
 
     .movies-list {
-        grid-row-gap: 30px; /*Добавила*/
+        grid-row-gap: 30px;
     }
 }
 
@@ -107,8 +90,7 @@
         row-gap: 16px;
     }
 
-    .movies-list__button {
-        width: 240px;
-        /*margin-bottom: 50px; Добавила*/
+    .movies-list__error {
+        font-size: 16px;
     }
 }

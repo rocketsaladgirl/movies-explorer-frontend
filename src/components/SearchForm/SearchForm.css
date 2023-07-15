@@ -65,13 +65,26 @@
 }
 
 /*Поле ошибки*/
-.search__error {
+.search__big-error {
   min-height: 12px;
+  margin-top: 9px;
   margin-bottom: 9px;
-  color: #ee3465;
   text-align: center;
   font-style: normal;
   font-weight: 400;
+  color: #ee3465;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.search__error {
+  display: none;
+  min-height: 12px;
+  margin-bottom: 9px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  color: #ee3465;
   font-size: 12px;
   line-height: 1;
 }
@@ -128,6 +141,14 @@
   .search__fieldset {
     margin: 0;
     max-width: 708px;
+  }
+
+  .search__big-error {
+    display: none;
+  }
+
+  .search__error {
+    display: inline-block;
   }
 
 }

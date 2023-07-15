@@ -1,7 +1,7 @@
 /*Общий блок*/
 .movies-card {
     background-color: #FDFDFD;
-    /* overflow: hidden; */
+    overflow: hidden;
     transition: 10.5s;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
@@ -15,7 +15,6 @@
 
 /*Информация и кнопка сохранения*/
 .movies-card__info {
-    /* margin-bottom: 5px; Добавила */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,18 +24,17 @@
 /*Заголовок*/
 .movies-card__title {
     max-width: 265px;
-    margin: 14px 26px 9px 14px;
+    margin: 14px 0px 9px 14px;
     font-weight: 500;
     font-size: 15px;
     line-height: 18.15px;
     text-overflow: ellipsis;
-    /* overflow: hidden; */
+    overflow: hidden;
     white-space: nowrap;
 }
 
 /*Длина фильма*/
 .movies-card__duration {
-    /* margin: 0 0 14px 14px; */
     margin: 0 0 11px 14px;
     color: #A0A0A0;
     font-weight: 400;
@@ -57,6 +55,7 @@
     height: 30px;
     margin: 19px 14px 19px 0;
     padding: 0;
+    background-image: url('../../images/logo/not-save.svg');
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -67,33 +66,17 @@
 }
   
 .movies-card__button:hover {
-    opacity: 0.8;
+    opacity: 0.3;
 }
 
 /*Стили кнопки*/
-.movies-card__button_type_add {
-    background-image: url('../../images/logo/not-save.svg');
-}
-  
 .movies-card__button_type_added {
     background-image: url('../../images/logo/save.svg');
-    /* animation: heartbeat 0.2s ease-in 2; */
 }
   
 .movies-card__button_type_delete {
     background-image: url('../../images/logo/delete.svg');
-    opacity: 0.2;
 }
-  
-  /* .movies-card:hover .movies-card__button_type_remove {
-    opacity: 1;
-    scale: 1.3;
-  }
-  
-  .movies-card:hover .movies-card__button_type_remove:hover {
-    opacity: .8;
-    animation: heartbeat 0.2s ease-in 2;
-  } */
   
 @media screen and (max-width: 1200px) {
     .movies-card__title {
@@ -114,18 +97,14 @@
 @media screen and (max-width: 583px) {
     .movies-card__title {
         max-width: 240px;
-        margin-top: 7px; /*Добавила*/
-        /* font-size: 12px;
-        line-height: 1.25; */
+        margin-top: 7px;
     }
 
     .movies-card__duration {
-        /* font-size: 10px;
-        line-height: 1.2; */
         margin-top: 0;
     }
 
-    .movies-card__button_type_remove {
+    .movies-card__button_type_delete {
         opacity: 1;
     }
   
