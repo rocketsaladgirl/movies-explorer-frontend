@@ -16,7 +16,7 @@ function SavedMovies() {
     const [isLoading, setIsLoading] = useState(false);
     const { savedMovies, setSavedMovies } = useMoviesContext();
     const [searchedSavedMovies, setSearchedSavedMovies] = useState([]);
-    const [searchParams, setSearchParams] = useState({querry: '', includeShorts: false, isMovieSeached: false});
+    const [searchParams, setSearchParams] = useState({querry: '', includeShorts: false});
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [text, setText] = useState('');
 
@@ -24,7 +24,7 @@ function SavedMovies() {
         evt.preventDefault();
         
         const {querry, shorts} = evt.target.elements;
-        const currentMovieSearch = {querry: querry.value, includeShorts: shorts.checked, isMovieSeached: true}; // alreadySeached: true
+        const currentMovieSearch = {querry: querry.value, includeShorts: shorts.checked};
     
         setSearchParams(currentMovieSearch);
     }
@@ -72,7 +72,7 @@ function SavedMovies() {
 
             {isLoading
                 ? <Preloader />
-                : <MoviesCardList moviesData={searchedSavedMovies} isMovieSeached={searchParams.isMovieSeached} /> // isAlreadySeached={searchParams.alreadySeached} 
+                : <MoviesCardList moviesData={searchedSavedMovies} />
             }
         </main>
     )

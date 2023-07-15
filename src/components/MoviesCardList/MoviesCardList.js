@@ -4,7 +4,7 @@ import './MoviesCardList.css';
 
 import MoviesCard from '../MoviesCard/MoviesCard';
 
-function MoviesCardList({ moviesData, isMovieSeached }) {
+function MoviesCardList({ moviesData }) {
     const location = useLocation();
 
     return (
@@ -25,17 +25,10 @@ function MoviesCardList({ moviesData, isMovieSeached }) {
                             ))
                         }
                     </ul>
-                    : <span className='movies-list__error'>
-                        {
-                            isMovieSeached
-                                ? 'Данные не найдены'
-                                : ''
-                        }
-                    </span>
+                    : <span className='movies-list__error'>Ничего не найдено</span>
             }
         </section>
     )
 }
-
 
 export default MoviesCardList;
