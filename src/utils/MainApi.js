@@ -1,7 +1,9 @@
+import { apiOptions } from './constants';
+
 class MainApi {
     constructor(config) {
-        this.baseURL = config.baseURL;
-
+        this._baseURL = config.baseURL;
+        this._headers = config.headers
     }
 
     // метод проверки ответа от сервера (приватный)
@@ -14,148 +16,87 @@ class MainApi {
     }
 
     // метод регистрации пользователя
-    registerUser({ name, email, password }) {
+    registerUser(userData) {
         return fetch(`${this._baseURL}/signup`, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: 'include',
             method: 'POST',
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                password: password,
-            }),
+            headers: this._headers,
+            body: JSON.stringify(userData),
 
         })
         .then(res => this._checkServerResponse(res))
     }
 
-    // метод авторизации пользователя
-    loginUser({ email, password }) {
+    // авторизация пользователя
+    loginUser(userData) {
         return fetch(`${this._baseURL}/signin`, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: 'include',
             method: 'POST',
-            body: JSON.stringify({
-                email: email,
-                password: password,
-            }),
+            headers: this._headers,
+            credentials: 'include',
+            body: JSON.stringify(userData),
         })
         .then(res => this._checkServerResponse(res))
     }
 
     // получить данные пользователя
     getUserInfo() {
-        const token = localStorage.getItem('jwt');
-
-        return fetch(`${this.baseURL}/users/me`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include',
+        return fetch(`${this._baseURL}/users/me`, {
             method: 'GET',
+            headers: this._headers,
+            credentials: 'include',
         })
         .then(res => this._checkServerResponse(res));
     }
 
     // редактировать данные пользователя
-    setUserInfo({ name, email }) {
-        const token = localStorage.getItem('jwt');
-
-        return fetch(`${this.baseURL}/users/me`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include',
+    setUserInfo(userData) {
+        return fetch(`${this._baseURL}/users/me`, {
             method: 'PATCH',
-            body: JSON.stringify({
-                name: name,
-                email: email,
-            })
+            headers: this._headers,
+            credentials: 'include',
+            body: JSON.stringify(userData)
+        })
+        .then(res => this._checkServerResponse(res));
+    }
+
+    // разлогинивание пользователя
+    logoutUser() {
+        return fetch(`${this._baseURL}/signout`, {
+          method: 'GET',
+          credentials: 'include',
         })
         .then(res => this._checkServerResponse(res));
     }
 
     // добавление фильма в сохраненные
-    addMovieCard(data) {
-        const {
-            country,
-            director,
-            duration,
-            year,
-            description,
-            image,
-            trailerLink,
-            id,
-            nameRU,
-            nameEN,
-        } = data;
-
-        const token = localStorage.getItem('jwt');
-
-        return fetch(`${this.baseURL}/movies`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include',
+    addMovie(movieData) {
+        return fetch(`${this._baseURL}/movies`, {
             method: 'POST',
-            body: JSON.stringify({
-                    country,
-                    director,
-                    duration,
-                    year,
-                    description,
-                    image: 'https://api.nomoreparties.co'.baseURL + image.url,
-                    trailerLink,
-                    thumbnail: 'https://api.nomoreparties.co'.baseURL + image.formats.thumbnail.url,
-                    movieId: id,
-                    nameRU,
-                    nameEN,
-            }),
+            headers: this._headers,
+            credentials: 'include',
+            body: JSON.stringify(movieData),
         })
         .then(res => this._checkServerResponse(res));
     }
 
     // получение списка сохраненных фильмов
-    getAllSavedMovies() {
-        const token = localStorage.getItem('jwt');
-
-        return fetch(`${this.baseURL}/movies`, {
+    getSavedMovies() {
+        return fetch(`${this._baseURL}/movies`, {
+            method: 'GET',
+            headers: this._headers,
             credentials: 'include',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
         })
         .then(res => this._checkServerResponse(res));
     }
 
     // удаление фильма из списка сохраненных
-    removeMovieCard(movie) {
-        const token = localStorage.getItem('jwt');
-
-        return fetch(`${this.baseURL}/movies/${movie._id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
+    deleteMovie(movieId) {
+        return fetch(`${this._baseURL}/movies/${movieId}`, {
             method: 'DELETE',
+            headers: this._headers,
+            credentials: 'include',
         })
         .then(res => this._checkServerResponse(res));
     }
+}    
 
-}
-//Данные для API-config
-const apiConfig = {
-    baseURL: 'http://localhost:3000', // базовый url, было адрес фронтэнда
-};
-
-const mainApi = new MainApi(apiConfig);
-
-export default mainApi;
+export const mainApi = new MainApi(apiOptions);
