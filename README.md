@@ -16,7 +16,7 @@ https://rocketsaladgirl.nomoredomains.rocks'
 
 Фронтенд: https://rocketsaladgirl.nomoredomains.rocks 
 
-Ссылка на пул-реквест:
+Ссылка на пул-реквест: https://github.com/rocketsaladgirl/movies-explorer-frontend/pull/3
 
 
 
