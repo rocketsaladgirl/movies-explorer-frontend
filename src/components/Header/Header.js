@@ -8,14 +8,14 @@ import NavigationAuth from '../NavigationAuth/NavigationAuth';
 
 import logo from '../../images/logo/logo.svg';
 
-function Header({loggedIn}) {
+function Header({ isLogin }) {
     return (
-        <header className={`header ${!loggedIn ? 'header_type_auth' : ''}`}>
+        <header className={`header ${!isLogin ? 'header_type_auth' : ''}`}>
             <Link to='/' className='header__link'>
                 <img className='header__logo' src={logo} alt='логотип'></img>
             </Link>
-            {!loggedIn && <NavigationAuth />}
-            {loggedIn && <Navigation />}
+            {!isLogin && <NavigationAuth />}
+            {isLogin && <Navigation />}
         </header>
     );
 }
