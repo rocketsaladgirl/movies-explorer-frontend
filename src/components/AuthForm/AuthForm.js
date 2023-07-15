@@ -26,3 +26,4 @@ function AuthForm({ children, title, buttonText, text, linkText, link }) {
   }
   
   export default AuthForm;
+
