@@ -1,12 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Navigation.css';
 
 function Navigation() {
-    const [showItems, setShowItems] = React.useState(false); //задаем стейт работы меню 
+    const [showItems, setShowItems] = useState(false);
     
-    function handleToggleMenu () { //задаем функционал работы меню 
+    function handleToggleMenu () {
         setShowItems(!showItems);
     };
 
