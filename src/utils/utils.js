@@ -22,7 +22,7 @@ export function getCardsAmount() {
   
 // Функционал отвещающий за фильтрацию фильмов  
 function checkMovieDuration(movieDuration, isShortsIncluded, shortsDurationCriteria = SHORTS_DURATION) {
-    return isShortsIncluded || (movieDuration > shortsDurationCriteria);
+    return (isShortsIncluded && (movieDuration <= shortsDurationCriteria)) || (!isShortsIncluded && (movieDuration = shortsDurationCriteria));
 }
 
 function filterMovieByQuerry(movie, searchQuerry) {
