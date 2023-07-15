@@ -1,99 +1,70 @@
 /*Основной блок*/
-.filter {
-    margin-left: 41px;
+.checkbox {
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    background-color: #FFF;
-}
-
-.filter:hover {
-    opacity: 0.8;
-}
-
-/*Текст*/
-.filter__text {
-    margin-right: 14px;
+    align-items: center;
     align-self: center;
     color: #000;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+  
+.checkbox:hover {
+    opacity: 0.8;
 }
 
 /*Стили тумблера*/
-.filter__checkbox {
-    -webkit-appearance: none;
+.checkbox__element_type_real {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+}
+  
+.checkbox__element_type_custom {
     width: 36px;
     height: 20px;
+    margin-left: 14px;
     position: relative;
-    align-self: center;
-    background: #FFFFFF;
-    font-size: 16px;
-    appearance: none;
-    outline: none;
+    display: inline-block;
+    vertical-align: sub;
     border-radius: 20px;
-    transition: all .2s ease-in-out;
-    box-shadow: 0px 4px 4px rgba(50, 50, 71, 0.08), 0px 4px 8px rgba(50, 50, 71, 0.06);
-    cursor: pointer;
+    box-sizing: border-box;
 }
-
-.filter__checkbox:after {
-    width: 20px;
+  
+.checkbox__element_type_custom::before {
+    width: 36px;
     height: 20px;
-    content: "";
     position: absolute;
-    left: 0;
-    background-color: #b0adad; /*по макету #F5F5F5;*/
-    border-radius: 50%;
-    box-shadow: 0 0 0.25em rgb(0 0 0 / 30%);
-    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
-    box-shadow: 0 0 .25em rgba(0,0,0,.3);
-    -webkit-transform: scale(.8);
-    transform: scale(.8);
-    transition: all .2s ease-in-out;
+    left: 50%;
+    top: 50%;
+    content: '';
+    background: url('../../images/logo/smalltumboff.svg');
+    background-size: cover; 
+    transform: translate(-50%, -50%);
+    transition: all .3s ease-in-out;
 }
-
-.filter__checkbox:checked {
-    background-color: #FFFFFF;
+  
+.checkbox__element_type_real:checked + .checkbox__element_type_custom::before {
+    background: url('../../images/logo/smalltumb.svg');
+    background-size: cover; 
 }
-
-.filter__checkbox:checked:after {
-    left: calc(100% - 20px);
-    background-color: #2BE080!important;
-}
-
-.filter__checkbox:checked + .filter__tumbler {
-    left: 30px;
-}
-   
-.filter__checkbox:checked::after {
-    background-color: #2BE080;
-}
-
-
-@media screen and (max-width: 1023px) {
-    .filter {
-        margin-left: 38px;
-    }
-}
-
+  
 @media screen and (max-width: 768px) {
-    .filter {
-        margin-left: 0;
-        /* margin-top: 38px; */
-        margin-top: 25px;
-        align-self: center;
+    .checkbox {
+        margin-top: 15px;
     }
 }
-
-@media screen and (max-width: 666px) {
-    .filter {
-        /* margin-top: 45px;     */
-        margin-top: 34px;
-    }
-
-    .filter__text {
+  
+@media screen and (max-width: 600px) {
+    .checkbox {
+        margin-top: 22px;
         font-size: 11px;
     }
 }
+    
