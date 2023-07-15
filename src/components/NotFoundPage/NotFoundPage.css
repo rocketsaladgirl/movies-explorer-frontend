@@ -35,6 +35,8 @@
     line-height: 17px;
     text-align: center;
     color: #000000;
+    background-color: #FFF;
+    border: none;
 }
 
 .not-found__button:hover {

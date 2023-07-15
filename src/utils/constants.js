@@ -1,7 +1,7 @@
 // Настройки api
 export const apiOptions = {
-    // baseURL: 'http://localhost:3000',
-    baseURL: 'https://api.rocketsaladgirl.nomoredomains.rocks',
+    baseURL: 'http://localhost:3000',
+    // baseURL: 'https://api.rocketsaladgirl.nomoredomains.rocks',
     headers: {
       'Content-Type': 'application/json',
     }
