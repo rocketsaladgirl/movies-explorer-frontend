@@ -22,7 +22,7 @@ function Movies() {
     const [cardsAmount, setCardsAmount] = useState(getCardsAmount());
     const [isMoveButtonVisible, setIsMoveButtonVisible] = useState(true);
     const [searchParams, setSearchParams] = useState({querry: '', includeShorts: false});
-    const [serachedMovies, setSearchedMovies] = useState([]);
+    const [searchedMovies, setSearchedMovies] = useState([]);
     const { setSavedMovies } = useMoviesContext();
     const [isEmptyField, setIsEmptyField] = useState(false);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -49,7 +49,7 @@ function Movies() {
     }
 
     function handleMoreMovies() {
-        const moviesToShow = serachedMovies.slice(displayedMovies.length, displayedMovies.length + cardsAmount.extraCards); 
+        const moviesToShow = searchedMovies.slice(displayedMovies.length, displayedMovies.length + cardsAmount.extraCards); 
     
         setDisplayedMovies([...displayedMovies, ...moviesToShow]);
     }
@@ -118,9 +118,9 @@ function Movies() {
     }, [searchParams, allMovies])
 
     useEffect(() => {
-        setDisplayedMovies(serachedMovies.slice(0, cardsAmount.totalCards));
+        setDisplayedMovies(searchedMovies.slice(0, cardsAmount.totalCards));
 
-    }, [cardsAmount, serachedMovies])
+    }, [cardsAmount, searchedMovies])
 
     useEffect(() => {
         window.addEventListener('resize', debouncedResize);
@@ -130,8 +130,8 @@ function Movies() {
 
 
     useEffect(() => {
-        setIsMoveButtonVisible(displayedMovies.length < serachedMovies.length);
-    }, [displayedMovies, serachedMovies])
+        setIsMoveButtonVisible(displayedMovies.length < searchedMovies.length);
+    }, [displayedMovies, searchedMovies])
 
     return (
         <main className='movies main-container'>
