@@ -29,6 +29,11 @@ function SavedMovies() {
         setSearchParams(currentMovieSearch);
     }
 
+    function handleShortsClick() {
+        const newSearchParams = {...searchParams, includeShorts: !searchParams.includeShorts};
+        setSearchParams(newSearchParams);
+    }
+
     function handlePopupClose() {
         setIsPopupOpen(false);
         setText('');
@@ -63,12 +68,15 @@ function SavedMovies() {
                 <PopupContent onClose={handlePopupClose} text={text} />
             </Popup>
 
-            <SearchForm
-                searchParams={searchParams}
-                handleSubmit={handleSearchSubmit}
-                setSearchParams={setSearchParams}
-                isRequired={false}
-            />
+            {isLoading ? null : (
+                <SearchForm
+                    searchParams={searchParams}
+                    handleSubmit={handleSearchSubmit}
+                    setSearchParams={setSearchParams}
+                    isRequired={false}
+                    handleShortsClick={handleShortsClick}
+                />
+            )}
 
             {isLoading
                 ? <Preloader />

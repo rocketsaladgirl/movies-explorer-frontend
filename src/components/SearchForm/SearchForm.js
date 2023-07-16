@@ -6,7 +6,7 @@ import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 
 import { EMPTY_FIELD } from '../../utils/constants';
 
-function SearchForm({ searchParams, handleSubmit, setSearchParams, isRequired = true, isEmptyField }) {
+function SearchForm({ searchParams, handleSubmit, setSearchParams, isRequired = true, isEmptyField, handleShortsClick }) {
     const [searchValue, setSearchValue] = useState(searchParams.querry);
     const [isShortsFilmChecked, setIsShortsFilmChecked] = useState(searchParams.includeShorts);
 
@@ -16,7 +16,7 @@ function SearchForm({ searchParams, handleSubmit, setSearchParams, isRequired = 
 
     function handleShortsCheck() {
         setIsShortsFilmChecked(!isShortsFilmChecked);
-        setSearchParams({...searchParams, includeShorts: !searchParams.includeShorts});
+        handleShortsClick();
     }
 
     useEffect(() => {

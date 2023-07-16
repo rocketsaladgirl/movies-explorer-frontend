@@ -58,6 +58,12 @@ function Movies() {
         setCardsAmount(getCardsAmount());
     }
 
+    function handleShortsClick() {
+        const newSearchParams = {...searchParams, includeShorts: !searchParams.includeShorts};
+        localStorage.setItem('search', JSON.stringify(newSearchParams));
+        setSearchParams(newSearchParams);
+    }
+
 
     function handlePopupClose() {
         setIsPopupOpen(false);
@@ -140,12 +146,15 @@ function Movies() {
                 <PopupContent onClose={handlePopupClose} text={text} />
             </Popup>
 
-            <SearchForm
-                searchParams={searchParams}
-                handleSubmit={handleSearchSubmit}
-                setSearchParams={setSearchParams}
-                isEmptyField={isEmptyField}
-            />
+            {isLoading ? null : (
+                <SearchForm
+                    searchParams={searchParams}
+                    handleSubmit={handleSearchSubmit}
+                    setSearchParams={setSearchParams}
+                    isEmptyField={isEmptyField}
+                    handleShortsClick={handleShortsClick}
+                />
+            )}
 
             {isLoading
                 ? <Preloader />
