@@ -1,25 +1,44 @@
 # "Movies Explorer" (movies-explorer-frontend).
 ![movies](https://github.com/rocketsaladgirl/movies-explorer-frontend/assets/114432448/3f2199e3-8e7d-4d77-b8d1-b0e68107e5a5)
 
-## Описание проекта
-Приложение "Movies-explorer" с авторизацией и регистрацией пользователя .  
-  
-## Функционал
-Реализованы фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, поиск фильмов, добавление и удаление фильмов в избранное
-редактирование данных пользователя.
+## О чем данный проект:
+Проект `Movies-explorer` - это дипломная работа в рамках обучения в Яндекс Практикум.</br> 
+Представляет собой поисковик с фильмами.</br> 
+Пользователь может зарегистрироваться, авторизоваться, изменять личные данные и удалить аккаунт.</br>
+Пользуясь поиском фильмов, можно добавлять/удалять их в избранное. Так же реализована фильтрация по времени для короткометражных фильмов.</br>
+
+Проект состоит из двух частей: frontend и backend. </br>
+Backend часть можно посмотреть по ссылке: https://github.com/rocketsaladgirl/movies-explorer-api.git
+
+## В работе были использованы:
+#### 1. Frontend часть:
+   + верстка с использованием функциональных компонентов;
+   + методология БЭМ;
+   + использование CurrentUserContext;
+   + работа с React-API.
+     
+#### 2. Backend часть:
++ editorconfig;
++ ESLint;
++ создание схем пользователя и карточки фильма;
++ создание контроллеров и роутов для карточек и пользователей;
++ взаимодействие с базой данных;
+
+## Установка проекта:
+`npm run start` — запускает сервер   
+`npm run dev` — запускает сервер с hot-reload
+`npm run build` - запускает сборку приложения
   
 ## Ссылка на проект
 https://rocketsaladgirl.nomoredomains.rocks'
   
 Публичный IP-адрес сервера - 158.160.100.205
   
-Бэкенд: https://api.rocketsaladgirl.nomoredomains.rocks  
+Backend: https://api.rocketsaladgirl.nomoredomains.rocks  
 
-Фронтенд: https://rocketsaladgirl.nomoredomains.rocks 
+Frontend: https://rocketsaladgirl.nomoredomains.rocks 
 
-Ссылка на пул-реквест: https://github.com/rocketsaladgirl/movies-explorer-frontend/pull/3
 
-Ссылка на макет: https://disk.yandex.ru/d/fGrvcD2pT_S23Q
 
 
 
