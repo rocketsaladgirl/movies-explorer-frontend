@@ -1,4 +1,5 @@
-# movies-explorer-frontend
+# "Movies Explorer" (movies-explorer-frontend).
+![movies](https://github.com/rocketsaladgirl/movies-explorer-frontend/assets/114432448/3f2199e3-8e7d-4d77-b8d1-b0e68107e5a5)
 
 ## Описание проекта
 Приложение "Movies-explorer" с авторизацией и регистрацией пользователя .  
