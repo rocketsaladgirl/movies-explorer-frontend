@@ -27,7 +27,7 @@ Backend часть можно посмотреть по ссылке: https://gi
 ## Установка проекта:
 `npm run start` — запускает сервер   
 `npm run dev` — запускает сервер с hot-reload</br>
-`npm run build` - запускает сборку приложения
+`npm run build` — запускает сборку приложения
   
 ## Ссылка на проект
 https://rocketsaladgirl.nomoredomains.rocks'
