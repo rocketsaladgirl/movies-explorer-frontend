@@ -35,10 +35,34 @@ Backend часть можно посмотреть по ссылке: https://gi
 + Node.
 
 ## Установка проекта:
-`npm run start` — запускает сервер   
-`npm run dev` — запускает сервер с hot-reload</br>
-`npm run build` — запускает сборку приложения
-  
+Для запуска проекта необходимо сделать несколько простых шагов:
+
+- Создайте папку и перейдите в неё:
+
+```
+cd <Имя-папки>
+```
+
+- Склонируйте этот репозиторий:
+
+```
+git clone https://github.com/famovkin/movies-explorer-frontend.git
+```
+
+- Установите все зависимости:
+
+```
+npm install
+```
+
+- Теперь можно запустить проект:
+
+```
+npm run start — запускает сервер
+npm run dev — запускает сервер с hot-reload</br>
+npm run build — запускает сборку приложения
+```
+
 ## Ссылка на проект
 https://rocketsaladgirl.nomoredomains.rocks'
   
