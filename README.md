@@ -37,16 +37,10 @@ Backend часть можно посмотреть по ссылке: https://gi
 ## Установка проекта:
 Для запуска проекта необходимо сделать несколько простых шагов:
 
-- Создайте папку и перейдите в неё:
+- Склонируйте этот репозиторий в нужную папку:
 
 ```
-cd <Имя-папки>
-```
-
-- Склонируйте этот репозиторий:
-
-```
-git clone https://github.com/famovkin/movies-explorer-frontend.git
+git clone https://github.com/rocketsaladgirl/movies-explorer-frontend.git
 ```
 
 - Установите все зависимости:
