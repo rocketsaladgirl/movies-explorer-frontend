@@ -57,14 +57,6 @@ npm run dev — запускает сервер с hot-reload</br>
 npm run build — запускает сборку приложения
 ```
 
-## Ссылка на проект
-https://rocketsaladgirl.nomoredomains.rocks'
-  
-Публичный IP-адрес сервера - 158.160.100.205
-  
-Backend: https://api.rocketsaladgirl.nomoredomains.rocks  
-
-Frontend: https://rocketsaladgirl.nomoredomains.rocks 
 
 
 
